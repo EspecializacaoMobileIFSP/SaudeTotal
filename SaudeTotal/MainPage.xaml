@@ -8,6 +8,13 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBlock HorizontalAlignment="Left" Margin="141,46,0,0" TextWrapping="Wrap" Text="Saúde Total" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="10,143,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="340"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,118,0,0" TextWrapping="Wrap" Text="Acesso" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,180,0,0" TextWrapping="Wrap" Text="Senha" VerticalAlignment="Top"/>
+        <PasswordBox HorizontalAlignment="Left" Margin="10,205,0,0" VerticalAlignment="Top" Width="340"/>
+        <Button Content="Criar acesso" HorizontalAlignment="Left" Margin="73,258,0,0" VerticalAlignment="Top"/>
+        <Button Content="Logar" HorizontalAlignment="Left" Margin="206,258,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Page>
