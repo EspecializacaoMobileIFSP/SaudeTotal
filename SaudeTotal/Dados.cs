@@ -19,12 +19,26 @@ namespace SaudeTotal
 
         internal static void SavePessoa(Pessoa pessoa)
         {
-            conn.Insert(pessoa);
+            try
+            {
+                conn.Insert(pessoa);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         internal static void DeletePessoa(Pessoa pessoa)
         {
-            conn.Delete(pessoa);
+            try
+            {
+                conn.Delete(pessoa);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         internal static List<Pessoa> ListPessoa()

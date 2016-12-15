@@ -16,7 +16,7 @@ namespace SaudeTotal
         [MaxLength(255)]
         public string Nome { get; set; }
 
-        [MaxLength(255)]
+        [MaxLength(255), Unique]
         public string Acesso { get; set; }
 
         [MaxLength(255)]

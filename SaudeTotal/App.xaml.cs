@@ -30,6 +30,7 @@ namespace SaudeTotal
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+            Dados.LoadDatabase();
         }
 
         /// <summary>

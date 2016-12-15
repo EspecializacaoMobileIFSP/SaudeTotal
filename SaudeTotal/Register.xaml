@@ -1,0 +1,25 @@
+﻿<Page
+    x:Class="SaudeTotal.Register"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SaudeTotal"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBlock Margin="10,60,10,0" TextWrapping="Wrap" Text="Cadastro" VerticalAlignment="Top" TextAlignment="Center"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,105,0,0" TextWrapping="Wrap" Text="Nome" VerticalAlignment="Top"/>
+        <TextBox Name="tbxNome" Margin="10,130,10,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,167,0,0" TextWrapping="Wrap" Text="Acesso" VerticalAlignment="Top"/>
+        <TextBox Name="tbxAcesso" Margin="10,192,10,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,229,0,0" TextWrapping="Wrap" Text="Senha" VerticalAlignment="Top"/>
+        <PasswordBox Name="tbxSenha" Margin="10,254,10,0" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,291,0,0" TextWrapping="Wrap" Text="Data de Nascimento" VerticalAlignment="Top"/>
+        <CalendarDatePicker Name="pkrNascimento" HorizontalAlignment="Stretch" Margin="10,316,10,0" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,353,0,0" TextWrapping="Wrap" Text="Altura" VerticalAlignment="Top"/>
+        <Slider Name="sldAltura" Margin="10,396,10,0" VerticalAlignment="Top" Maximum="300"/>
+        <Button Name="btnCancelar" Content="Cancelar" HorizontalAlignment="Center" Margin="10,445,225,0" VerticalAlignment="Top" Width="125" Click="btnCancelar_Click"/>
+        <Button Name="btnCadastrar" Content="Cadastrar" HorizontalAlignment="Center" Margin="225,445,10,0" VerticalAlignment="Top" Width="125" Click="btnCadastrar_Click"/>
+    </Grid>
+</Page>
