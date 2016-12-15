@@ -45,7 +45,7 @@ namespace SaudeTotal
             string message;
             try
             {
-                Dados.SavePessoa(pessoa);
+                Dados.Save(pessoa);
                 message = "A operação foi realizada com sucesso.";
             }
             catch (Exception)

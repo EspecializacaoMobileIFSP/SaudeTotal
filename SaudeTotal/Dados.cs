@@ -15,13 +15,15 @@ namespace SaudeTotal
         {
             conn = new SQLiteConnection(new SQLitePlatformWinRT(), "saudetotal.db");
             conn.CreateTable<Pessoa>();
+            conn.CreateTable<Corrida>();
+            conn.CreateTable<Peso>();
         }
 
-        internal static void SavePessoa(Pessoa pessoa)
+        internal static void Save(object obj)
         {
             try
             {
-                conn.Insert(pessoa);
+                conn.Insert(obj);
             }
             catch (Exception)
             {
@@ -29,11 +31,11 @@ namespace SaudeTotal
             }
         }
 
-        internal static void DeletePessoa(Pessoa pessoa)
+        internal static void Delete(object obj)
         {
             try
             {
-                conn.Delete(pessoa);
+                conn.Delete(obj);
             }
             catch (Exception)
             {
@@ -41,11 +43,14 @@ namespace SaudeTotal
             }
         }
 
+        /*
+         * Pessoa 
+         */
         internal static List<Pessoa> ListPessoa()
         {
             var retorno = new List<Pessoa>();
             var result = conn.Query<Pessoa>(
-                @"SELECT PessoaId, Nome, Acesso, Senha, DataDeNascimento, Peso FROM Pessoa"
+                @"SELECT PessoaId, Nome, Acesso, Senha, DataDeNascimento, Altura FROM Pessoa"
             );
 
             foreach (var item in result)
@@ -58,7 +63,7 @@ namespace SaudeTotal
         internal static Pessoa GetPessoa(string acesso, string senha)
         {
             var result = conn.Query<Pessoa>(
-                @"SELECT PessoaId, Nome, Acesso, Senha, DataDeNascimento, Peso FROM Pessoa WHERE Acesso = ? AND Senha= ?",
+                @"SELECT PessoaId, Nome, Acesso, Senha, DataDeNascimento, Altura FROM Pessoa WHERE Acesso = ? AND Senha= ?",
                 acesso, senha
             );
 
@@ -68,6 +73,40 @@ namespace SaudeTotal
                 pessoa = result[0];
             }
             return pessoa;
+        }
+
+        /*
+         * Corrida
+         */
+        internal static List<Corrida> ListCorrida(Pessoa pessoa)
+        {
+            var retorno = new List<Corrida>();
+            var result = conn.Query<Corrida>(
+                @"SELECT CorridaId, Data, Distancia, Tempo FROM Corrida WHERE Pessoa = ?", pessoa.PessoaId
+            );
+
+            foreach (var item in result)
+            {
+                retorno.Add(item);
+            }
+            return retorno;
+        }
+
+        /*
+         * Peso
+         */
+        internal static List<Peso> ListPeso(Pessoa pessoa)
+        {
+            var retorno = new List<Peso>();
+            var result = conn.Query<Peso>(
+                @"SELECT PesoId, Data, Valor FROM Peso WHERE Pessoa = ?", pessoa.PessoaId
+            );
+
+            foreach (var item in result)
+            {
+                retorno.Add(item);
+            }
+            return retorno;
         }
     }
 }

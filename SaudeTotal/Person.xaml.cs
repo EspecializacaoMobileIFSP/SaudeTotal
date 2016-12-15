@@ -25,6 +25,30 @@ namespace SaudeTotal
         public Person()
         {
             this.InitializeComponent();
+            this.LoadFields();
+        }
+
+        private void LoadFields()
+        {
+            tbxNome.Text = Sessao.pessoa.Nome;
+            tbxAcesso.Text = Sessao.pessoa.Acesso;
+            tbxSenha.Password = Sessao.pessoa.Senha;
+            sldAltura.Value = Sessao.pessoa.Altura;
+        }
+
+        private void btnDeletar_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(MainPage));
+        }
+
+        private void btnCancelar_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Chart));
+        }
+
+        private void btnAtualizar_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Chart));
         }
     }
 }

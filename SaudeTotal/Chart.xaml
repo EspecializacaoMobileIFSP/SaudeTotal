@@ -1,13 +1,22 @@
-﻿<Page
+﻿<Page x:Name="page"
     x:Class="SaudeTotal.Chart"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:SaudeTotal"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    xmlns:Charting="using:WinRTXamlToolkit.Controls.DataVisualization.Charting"
+    mc:Ignorable="d" Loaded="page_Loaded">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBlock Name="txtAtividades" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Atividades" VerticalAlignment="Top" Width="210" Height="106" TextAlignment="Center"/>
+        <Button Name="btnPerfil" Content="Perfil" HorizontalAlignment="Right" Margin="0,10,10,0" VerticalAlignment="Top" Width="125" Click="btnPerfil_Click"/>
+        <Button Name="btnPeso" Content="Peso" HorizontalAlignment="Right" Margin="0,47,10,0" VerticalAlignment="Top" Width="125" Click="btnPeso_Click"/>
+        <Button Name="btnCorrida" Content="Corrida" HorizontalAlignment="Right" Margin="0,84,10,0" VerticalAlignment="Top" Width="125" Click="btnCorrida_Click"/>
 
+        <Charting:Chart x:Name="PieChart" Title="Corrida" Margin="10,142,10,10">
+            <Charting:PieSeries Title="AAAAA" Margin="10,10,10,226.667" IndependentValuePath="Name" DependentValuePath="Amount" IsSelectionEnabled="False"/>
+            <Charting:PieSeries Title="AAAAA" Margin="10,227,10,9.667" IndependentValuePath="Name" DependentValuePath="Amount" IsSelectionEnabled="False"/>
+        </Charting:Chart>
     </Grid>
 </Page>

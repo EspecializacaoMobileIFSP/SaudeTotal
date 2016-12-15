@@ -9,11 +9,10 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <TextBlock Margin="10,60,10,0" TextWrapping="Wrap" Text="Saúde Total" TextAlignment="Center" Height="20" VerticalAlignment="Top"/>
-        <TextBox Margin="10,143,10,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,118,0,0" TextWrapping="Wrap" Text="Acesso" VerticalAlignment="Top"/>
+        <TextBox Name="tbxAcesso" Margin="10,143,10,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,180,0,0" TextWrapping="Wrap" Text="Senha" VerticalAlignment="Top"/>
-        <PasswordBox Margin="10,205,10,0" VerticalAlignment="Top"/>
-        
+        <PasswordBox Name="tbxSenha" Margin="10,205,10,0" VerticalAlignment="Top"/>
         <Button Name="btnCadastrar" Content="Criar acesso" HorizontalAlignment="Center" VerticalAlignment="Top" Width="125" Margin="10,260,225,0" Click="btnCadastrar_Click"/>
         <Button Name="btnLogar" Content="Logar" HorizontalAlignment="Center" Margin="225,260,10,0" VerticalAlignment="Top" Width="125" Click="btnLogar_Click"/>
     </Grid>

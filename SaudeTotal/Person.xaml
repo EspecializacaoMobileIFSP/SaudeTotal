@@ -8,6 +8,17 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+        <TextBlock Margin="10,60,10,0" TextWrapping="Wrap" Text="Perfil" VerticalAlignment="Top" TextAlignment="Center"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,105,0,0" TextWrapping="Wrap" Text="Nome" VerticalAlignment="Top"/>
+        <TextBox Name="tbxNome" Margin="10,130,10,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,167,0,0" TextWrapping="Wrap" Text="Acesso" VerticalAlignment="Top"/>
+        <TextBox Name="tbxAcesso" Margin="10,192,10,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsEnabled="False"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,229,0,0" TextWrapping="Wrap" Text="Senha" VerticalAlignment="Top"/>
+        <PasswordBox Name="tbxSenha" Margin="10,254,10,0" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,291,0,0" TextWrapping="Wrap" Text="Altura" VerticalAlignment="Top"/>
+        <Slider Name="sldAltura" Margin="10,309,10,0" VerticalAlignment="Top" Maximum="300"/>
+        <Button Name="btnDeletar" Content="Deletar" HorizontalAlignment="Center" Margin="10,358,225,0" VerticalAlignment="Top" Width="125" Click="btnDeletar_Click"/>
+        <Button Name="btnCancelar" Content="Cancelar" HorizontalAlignment="Center" Margin="225,358,10,0" VerticalAlignment="Top" Width="125" Click="btnCancelar_Click"/>
+        <Button Name="btnAtualizar" Content="Atualizar" HorizontalAlignment="Center" Margin="225,395,10,0" VerticalAlignment="Top" Width="125" Click="btnAtualizar_Click"/>
     </Grid>
 </Page>

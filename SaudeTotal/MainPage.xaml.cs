@@ -32,9 +32,28 @@ namespace SaudeTotal
             Frame.Navigate(typeof(Register));
         }
 
-        private void btnLogar_Click(object sender, RoutedEventArgs e)
+        private async void btnLogar_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(Chart));
+            Pessoa pessoa = Dados.GetPessoa(tbxAcesso.Text, tbxSenha.Password);
+
+            string message;
+            if (pessoa != null)
+            {
+                message = string.Format("Seja bem vindo {0}", pessoa.Nome);
+                Frame.Navigate(typeof(Chart), pessoa);
+            }
+            else
+            {
+                message = "A credencial utilizada é incorreta.";
+            }
+
+            ContentDialog dlgMessage = new ContentDialog()
+            {
+                Title = "Login",
+                Content = message,
+                PrimaryButtonText = "Ok"
+            };
+            await dlgMessage.ShowAsync();
         }
     }
 }
