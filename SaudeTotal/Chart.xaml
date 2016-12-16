@@ -14,9 +14,16 @@
         <Button Name="btnPeso" Content="Peso" HorizontalAlignment="Right" Margin="0,47,10,0" VerticalAlignment="Top" Width="125" Click="btnPeso_Click"/>
         <Button Name="btnCorrida" Content="Corrida" HorizontalAlignment="Right" Margin="0,84,10,0" VerticalAlignment="Top" Width="125" Click="btnCorrida_Click"/>
 
-        <Charting:Chart x:Name="PieChart" Title="Corrida" Margin="10,142,10,10">
-            <Charting:PieSeries Title="AAAAA" Margin="10,10,10,226.667" IndependentValuePath="Name" DependentValuePath="Amount" IsSelectionEnabled="False"/>
-            <Charting:PieSeries Title="AAAAA" Margin="10,227,10,9.667" IndependentValuePath="Name" DependentValuePath="Amount" IsSelectionEnabled="False"/>
+        <Charting:Chart x:Name="chtPeso" Margin="10,142,10,0" Height="124" VerticalAlignment="Top">
+            <Charting:LineSeries Title="Peso" Margin="0,0,0,0" IndependentValuePath="Count" DependentValuePath="Value" IsSelectionEnabled="False" />
+        </Charting:Chart>
+
+        <Charting:Chart x:Name="chtDistancia" Margin="10,278,10,0" Height="124" VerticalAlignment="Top">
+            <Charting:LineSeries Title="Distancia" Margin="0,0,0,0" IndependentValuePath="Count" DependentValuePath="Value" IsSelectionEnabled="False" />
+        </Charting:Chart>
+
+        <Charting:Chart x:Name="chtTempo" Margin="10,412,10,0" Height="124" VerticalAlignment="Top">
+            <Charting:LineSeries Title="Tempo" Margin="0,0,0,0" IndependentValuePath="Count" DependentValuePath="Value" IsSelectionEnabled="False" />
         </Charting:Chart>
     </Grid>
 </Page>

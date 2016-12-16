@@ -28,6 +28,62 @@ namespace SaudeTotal
             this.InitializeComponent();
         }
 
+        private void InitializeScreen()
+        {
+            List<ValueChart> listPeso = new List<ValueChart>();
+            List<ValueChart> listDistancia = new List<ValueChart>();
+            List<ValueChart> listTempo = new List<ValueChart>();
+
+            List<Peso> pesos = Dados.ListPeso(Sessao.pessoa, "DESC");
+            List<Corrida> corridas = Dados.ListCorrida(Sessao.pessoa, "DESC");
+
+            int count = 0;
+            foreach (Peso peso in pesos)
+            {
+                listPeso.Add(new ValueChart()
+                {
+                    Count = count++,
+                    Value = peso.Valor
+                });
+            };
+
+            count = 0;
+            foreach (Corrida corrida in corridas)
+            {
+                listDistancia.Add(new ValueChart()
+                {
+                    Count = count++,
+                    Value = corrida.Distancia
+                });
+            };
+
+            count = 0;
+            foreach (Corrida corrida in corridas)
+            {
+                listTempo.Add(new ValueChart()
+                {
+                    Count = count++,
+                    Value = corrida.Tempo
+                });
+            };
+
+            (chtPeso.Series[0] as LineSeries).ItemsSource = listPeso;
+            (chtDistancia.Series[0] as LineSeries).ItemsSource = listDistancia;
+            (chtTempo.Series[0] as LineSeries).ItemsSource = listTempo;
+
+            txtAtividades.Text = "Atividades";
+            if (pesos.Count > 0)
+            {
+                Peso peso = pesos[pesos.Count - 1];
+                txtAtividades.Text += string.Format("\nIMC: {0:0.00}", (peso.Valor / Math.Pow(Sessao.pessoa.Altura / 100, 2.0)));
+            }
+
+            if (corridas.Count > 0) {
+                Corrida corrida = corridas[corridas.Count -1];
+                txtAtividades.Text += string.Format("\nÚtima corrida \n{0} metros em \n{1} minutos", corrida.Distancia, corrida.Tempo);
+            }
+        }
+
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             if (e.Parameter is Pessoa)
@@ -39,17 +95,7 @@ namespace SaudeTotal
 
         private void page_Loaded(object sender, RoutedEventArgs e)
         {
-            LoadChartContents();
-        }
-
-        private void LoadChartContents()
-        {
-            List<Test> list = new List<Test>();
-            list.Add(new Test() { Name = "A1", Amount = 70 });
-            list.Add(new Test() { Name = "A2", Amount = 20 });
-            list.Add(new Test() { Name = "A3", Amount = 10 });
-            (PieChart.Series[0] as PieSeries).ItemsSource = list;
-            (PieChart.Series[1] as PieSeries).ItemsSource = list;
+            this.InitializeScreen();
         }
 
         private void btnPerfil_Click(object sender, RoutedEventArgs e)
@@ -68,9 +114,9 @@ namespace SaudeTotal
         }
     }
 
-    public class Test
+    public class ValueChart
     {
-       public string Name { get; set; }
-       public int Amount { get; set; }
+       public int Count { get; set; }
+       public double Value { get; set; }
     }
 }
