@@ -8,7 +8,7 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBlock Margin="10,60,10,0" TextWrapping="Wrap" Text="Atividade Fisica" VerticalAlignment="Top" TextAlignment="Center" FontSize="22" FontFamily="MV Boli" Foreground="#FF574C4C"/>
+        <TextBlock Margin="10,60,10,0" TextWrapping="Wrap" Text="Atividade Física" VerticalAlignment="Top" TextAlignment="Center" FontSize="22" FontFamily="MV Boli" Foreground="#FF574C4C"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,105,0,0" TextWrapping="Wrap" Text="Data" VerticalAlignment="Top"/>
         <CalendarDatePicker Name="pkrData" HorizontalAlignment="Stretch" Margin="10,130,10,0" VerticalAlignment="Top" PlaceholderText="Selecione a data"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,167,0,0" TextWrapping="Wrap" Text="Distância" VerticalAlignment="Top"/>

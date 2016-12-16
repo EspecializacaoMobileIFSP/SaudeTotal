@@ -47,7 +47,7 @@ namespace SaudeTotal
         {
             ContentDialog dlgMessage = new ContentDialog()
             {
-                Title = "Corrida",
+                Title = "Atividade física",
                 Content = "Deseja deletar este registro?",
                 PrimaryButtonText = "Deletar",
                 SecondaryButtonText = "Cancelar"
@@ -70,7 +70,7 @@ namespace SaudeTotal
 
                 dlgMessage = new ContentDialog()
                 {
-                    Title = "Corrida",
+                    Title = "Atividade física",
                     Content = message,
                     PrimaryButtonText = "Ok"
                 };

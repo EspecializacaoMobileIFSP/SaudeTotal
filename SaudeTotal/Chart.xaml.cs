@@ -34,8 +34,8 @@ namespace SaudeTotal
             List<ValueChart> listDistancia = new List<ValueChart>();
             List<ValueChart> listTempo = new List<ValueChart>();
 
-            List<Peso> pesos = Dados.ListPeso(Sessao.pessoa, "DESC");
-            List<Corrida> corridas = Dados.ListCorrida(Sessao.pessoa, "DESC");
+            List<Peso> pesos = Dados.ListPeso(Sessao.pessoa, "ASC");
+            List<Corrida> corridas = Dados.ListCorrida(Sessao.pessoa, "ASC");
 
             int count = 0;
             foreach (Peso peso in pesos)
@@ -80,7 +80,7 @@ namespace SaudeTotal
 
             if (corridas.Count > 0) {
                 Corrida corrida = corridas[corridas.Count -1];
-                txtAtividades.Text += string.Format("\nÚtima corrida \n{0} metros em \n{1} minutos", corrida.Distancia, corrida.Tempo);
+                txtAtividades.Text += string.Format("\nÚtima atividade \n{0} metros em \n{1} minutos", corrida.Distancia, corrida.Tempo);
             }
         }
 
