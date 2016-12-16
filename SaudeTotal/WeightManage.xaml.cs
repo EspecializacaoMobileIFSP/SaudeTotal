@@ -32,9 +32,34 @@ namespace SaudeTotal
             Frame.Navigate(typeof(Weight));
         }
 
-        private void btnCadastrar_Click(object sender, RoutedEventArgs e)
+        private async void btnCadastrar_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(Weight));
+            Peso peso = new Peso()
+            {
+                Pessoa = Sessao.pessoa.PessoaId,
+                Data = pkrData.Date.ToString(),
+                Valor = sldPeso.Value
+            };
+
+            string message;
+            try
+            {
+                Dados.Save(peso);
+                message = "A operação foi realizada com sucesso.";
+                Frame.Navigate(typeof(Weight));
+            }
+            catch (Exception)
+            {
+                message = "A operação falhou.";
+            }
+
+            ContentDialog dlgMessage = new ContentDialog()
+            {
+                Title = "Peso",
+                Content = message,
+                PrimaryButtonText = "Ok"
+            };
+            await dlgMessage.ShowAsync();
         }
     }
 }

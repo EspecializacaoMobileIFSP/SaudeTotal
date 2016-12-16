@@ -8,12 +8,17 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBlock Margin="10,50,10,0" TextWrapping="Wrap" Text="Corrida" VerticalAlignment="Top" TextAlignment="Center"/>
-        <ListBox x:Name="lbxDados" ItemsSource="{Binding}" Margin="0,75,0,58">
+        <TextBlock Margin="10,50,10,0" TextWrapping="Wrap" Text="Corrida" VerticalAlignment="Top" TextAlignment="Center" FontWeight="Bold"/>
+        <ListBox x:Name="lbxDados" ItemsSource="{Binding}" Margin="0,75,0,58" SelectionChanged="lbxDados_SelectionChanged">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock x:Name="tbxItem"  Height="30" FontSize="18" Text="{Binding Name}"/>
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Text="Data" FontWeight="Bold"/>
+                        <TextBlock x:Name="tbxData" Text="{Binding Data}" FontStyle="Italic"/>
+                        <TextBlock Text="Metros" FontWeight="Bold"/>
+                        <TextBlock x:Name="tbxDistancia" Text="{Binding Distancia}" FontStyle="Italic"/>
+                        <TextBlock Text="Minutos" FontWeight="Bold"/>
+                        <TextBlock x:Name="tbxTempo" Text="{Binding Tempo}" FontStyle="Italic"/>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>

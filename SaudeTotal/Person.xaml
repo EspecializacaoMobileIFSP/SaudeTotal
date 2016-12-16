@@ -8,7 +8,7 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBlock Margin="10,60,10,0" TextWrapping="Wrap" Text="Perfil" VerticalAlignment="Top" TextAlignment="Center"/>
+        <TextBlock Margin="10,60,10,0" TextWrapping="Wrap" Text="Perfil" VerticalAlignment="Top" TextAlignment="Center" FontWeight="Bold"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,105,0,0" TextWrapping="Wrap" Text="Nome" VerticalAlignment="Top"/>
         <TextBox Name="tbxNome" Margin="10,130,10,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,167,0,0" TextWrapping="Wrap" Text="Acesso" VerticalAlignment="Top"/>

@@ -22,9 +22,20 @@ namespace SaudeTotal
     /// </summary>
     public sealed partial class Run : Page
     {
+        private List<Corrida> list;
+        string direction;
+
         public Run()
         {
             this.InitializeComponent();
+            this.InitializeList();
+        }
+
+        private void InitializeList()
+        {
+            direction = "DESC";
+            list = Dados.ListCorrida(Sessao.pessoa, direction);
+            lbxDados.DataContext = list;
         }
 
         private void abbBack_Click(object sender, RoutedEventArgs e)
@@ -32,9 +43,39 @@ namespace SaudeTotal
             Frame.Navigate(typeof(Chart));
         }
 
-        private void abbDelete_Click(object sender, RoutedEventArgs e)
+        private async void abbDelete_Click(object sender, RoutedEventArgs e)
         {
+            ContentDialog dlgMessage = new ContentDialog()
+            {
+                Title = "Corrida",
+                Content = "Deseja deletar este registro?",
+                PrimaryButtonText = "Deletar",
+                SecondaryButtonText = "Cancelar"
+            };
+            ContentDialogResult result = await dlgMessage.ShowAsync();
+            if (result == ContentDialogResult.Primary)
+            {
+                string message;
+                try
+                {
+                    Dados.Delete(list[lbxDados.SelectedIndex]);
+                    list = Dados.ListCorrida(Sessao.pessoa, direction);
+                    lbxDados.DataContext = list;
+                    message = "A operação foi realizada com sucesso.";
+                }
+                catch (Exception)
+                {
+                    message = "A operação falhou.";
+                }
 
+                dlgMessage = new ContentDialog()
+                {
+                    Title = "Corrida",
+                    Content = message,
+                    PrimaryButtonText = "Ok"
+                };
+                await dlgMessage.ShowAsync();
+            }
         }
 
         private void abbAdd_Click(object sender, RoutedEventArgs e)
@@ -44,12 +85,21 @@ namespace SaudeTotal
 
         private void abbUp_Click(object sender, RoutedEventArgs e)
         {
-
+            direction = "ASC";
+            list = Dados.ListCorrida(Sessao.pessoa, direction);
+            lbxDados.DataContext = list;
         }
 
         private void abbDown_Click(object sender, RoutedEventArgs e)
         {
+            direction = "DESC";
+            list = Dados.ListCorrida(Sessao.pessoa, direction);
+            lbxDados.DataContext = list;
+        }
 
+        private void lbxDados_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            abbDelete.IsEnabled = lbxDados.SelectedIndex > -1;
         }
     }
 }

@@ -32,9 +32,34 @@ namespace SaudeTotal
             Frame.Navigate(typeof(Run));
         }
 
-        private void btnSalvar_Click(object sender, RoutedEventArgs e)
+        private async void btnSalvar_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(Run));
+            Corrida corrida = new Corrida() {
+                Pessoa = Sessao.pessoa.PessoaId,
+                Data = pkrData.Date.ToString(),
+                Distancia = Double.Parse(tbxDistancia.Text),
+                Tempo = pkrTempo.Time.TotalMinutes
+            };
+
+            string message;
+            try
+            {
+                Dados.Save(corrida);
+                message = "A operação foi realizada com sucesso.";
+                Frame.Navigate(typeof(Run));
+            }
+            catch (Exception)
+            {
+                message = "A operação falhou.";
+            }
+
+            ContentDialog dlgMessage = new ContentDialog()
+            {
+                Title = "Corrida",
+                Content = message,
+                PrimaryButtonText = "Ok"
+            };
+            await dlgMessage.ShowAsync();
         }
     }
 }

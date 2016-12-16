@@ -94,7 +94,7 @@ namespace SaudeTotal
         {
             var retorno = new List<Corrida>();
             var result = conn.Query<Corrida>(
-                @"SELECT CorridaId, Data, Distancia, Tempo FROM Corrida WHERE Pessoa = ? ORDER BY Data ?", pessoa.PessoaId, direction
+                @"SELECT CorridaId, Data, Distancia, Tempo FROM Corrida WHERE Pessoa = ? ORDER BY Data " + direction, pessoa.PessoaId
             );
 
             foreach (var item in result)
@@ -111,7 +111,7 @@ namespace SaudeTotal
         {
             var retorno = new List<Peso>();
             var result = conn.Query<Peso>(
-                @"SELECT PesoId, Data, Valor FROM Peso WHERE Pessoa = ? ORDER BY Data ?", pessoa.PessoaId, direction
+                @"SELECT PesoId, Data, Valor FROM Peso WHERE Pessoa = ? ORDER BY Data " + direction, pessoa.PessoaId
             );
 
             foreach (var item in result)

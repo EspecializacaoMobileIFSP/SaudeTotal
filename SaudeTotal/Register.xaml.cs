@@ -47,6 +47,7 @@ namespace SaudeTotal
             {
                 Dados.Save(pessoa);
                 message = "A operação foi realizada com sucesso.";
+                Frame.Navigate(typeof(MainPage));
             }
             catch (Exception)
             {
@@ -60,8 +61,6 @@ namespace SaudeTotal
                 PrimaryButtonText = "Ok"
             };
             await dlgMessage.ShowAsync();
-
-            Frame.Navigate(typeof(MainPage));
         }
     }
 }
