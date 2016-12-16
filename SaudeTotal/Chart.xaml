@@ -10,9 +10,9 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <TextBlock Name="txtAtividades" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Atividades" VerticalAlignment="Top" Width="210" Height="106" TextAlignment="Center" FontStyle="Italic"/>
-        <Button Name="btnPerfil" Content="Perfil" HorizontalAlignment="Right" Margin="0,10,10,0" VerticalAlignment="Top" Width="125" Click="btnPerfil_Click"/>
-        <Button Name="btnPeso" Content="Peso" HorizontalAlignment="Right" Margin="0,47,10,0" VerticalAlignment="Top" Width="125" Click="btnPeso_Click"/>
-        <Button Name="btnCorrida" Content="Corrida" HorizontalAlignment="Right" Margin="0,84,10,0" VerticalAlignment="Top" Width="125" Click="btnCorrida_Click"/>
+        <Button Name="btnPerfil" Content="Perfil" HorizontalAlignment="Right" Margin="0,10,10,0" VerticalAlignment="Top" Width="125" Click="btnPerfil_Click" Background="#FFB2D6C9"/>
+        <Button Name="btnPeso" Content="Peso" HorizontalAlignment="Right" Margin="0,47,10,0" VerticalAlignment="Top" Width="125" Click="btnPeso_Click" Background="#FFE3F0AA"/>
+        <Button Name="btnCorrida" Content="Atividade Fisica" HorizontalAlignment="Right" Margin="0,84,10,0" VerticalAlignment="Top" Width="125" Click="btnCorrida_Click" Background="#CCE28484"/>
 
         <Charting:Chart x:Name="chtPeso" Margin="10,142,10,0" Height="124" VerticalAlignment="Top">
             <Charting:LineSeries Title="Peso" Margin="0,0,0,0" IndependentValuePath="Count" DependentValuePath="Value" IsSelectionEnabled="False" />

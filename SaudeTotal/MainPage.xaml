@@ -9,7 +9,7 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <StackPanel HorizontalAlignment="Stretch" Margin="10,4,10,0" VerticalAlignment="Top">
-            <TextBlock Margin="10,60,10,0" TextWrapping="Wrap" Text="Saúde Total" TextAlignment="Center" Height="32" VerticalAlignment="Top" FontSize="24" FontFamily="MV Boli" Foreground="#FF574C4C"/>
+            <TextBlock Margin="10,60,10,0" TextWrapping="Wrap" Text="Saúde Total" TextAlignment="Center" Height="32" VerticalAlignment="Top" FontSize="28" FontFamily="MV Boli" Foreground="#FF574C4C"/>
             <Image x:Name="logo" Source="Assets/saudetotal.jpg" HorizontalAlignment="Center" Margin="60,20,60,0" VerticalAlignment="Top"/>
             <TextBlock HorizontalAlignment="Left" Margin="10,20,0,0" TextWrapping="Wrap" Text="Acesso" VerticalAlignment="Top"/>
             <TextBox Name="tbxAcesso" Margin="10,10,10,0" PlaceholderText="Digite seu username" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>

@@ -8,14 +8,14 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBlock Margin="10,60,10,0" TextWrapping="Wrap" Text="Atividade Fisica" VerticalAlignment="Top" TextAlignment="Center"/>
+        <TextBlock Margin="10,60,10,0" TextWrapping="Wrap" Text="Atividade Fisica" VerticalAlignment="Top" TextAlignment="Center" FontSize="22" FontFamily="MV Boli" Foreground="#FF574C4C"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,105,0,0" TextWrapping="Wrap" Text="Data" VerticalAlignment="Top"/>
-        <CalendarDatePicker Name="pkrData" HorizontalAlignment="Stretch" Margin="10,130,10,0" VerticalAlignment="Top"/>
+        <CalendarDatePicker Name="pkrData" HorizontalAlignment="Stretch" Margin="10,130,10,0" VerticalAlignment="Top" PlaceholderText="Selecione a data"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,167,0,0" TextWrapping="Wrap" Text="Distância" VerticalAlignment="Top"/>
         <TextBox Name="tbxDistancia" Margin="10,192,10,0" TextWrapping="Wrap" Text="" InputScope="Number" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,229,0,0" TextWrapping="Wrap" Text="Tempo" VerticalAlignment="Top"/>
         <TimePicker Name="pkrTempo" HorizontalAlignment="Stretch" Margin="10,254,10,0" VerticalAlignment="Top"/>
-        <Button Name="btnCancelar" Content="Cancelar" HorizontalAlignment="Center" Margin="10,315,225,0" VerticalAlignment="Top" Width="125" Click="btnCancelar_Click"/>
-        <Button Name="btnSalvar" Content="Salvar" HorizontalAlignment="Center" Margin="225,315,10,0" VerticalAlignment="Top" Width="125" Click="btnSalvar_Click"/>
+        <Button Name="btnCancelar" Content="Cancelar" HorizontalAlignment="Center" Margin="10,315,225,0" VerticalAlignment="Top" Width="125" Click="btnCancelar_Click" Background="#33FF0000" Foreground="#FF302B2B"/>
+        <Button Name="btnSalvar" Content="Salvar" HorizontalAlignment="Center" Margin="225,315,10,0" VerticalAlignment="Top" Width="125" Click="btnSalvar_Click" Foreground="#FF382E2E" Background="#3317FF00"/>
     </Grid>
 </Page>

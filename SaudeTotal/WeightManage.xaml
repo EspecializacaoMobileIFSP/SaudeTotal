@@ -9,7 +9,7 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="10,5,10,0">
         <StackPanel HorizontalAlignment="Stretch" Margin="10,4,10,0" VerticalAlignment="Top">
-            <TextBlock Margin="10,60,10,0" TextWrapping="Wrap" Text="Detalhes sobre o seu Peso" VerticalAlignment="Top" TextAlignment="Center" FontSize="18"/>
+            <TextBlock Margin="10,40,10,0" TextWrapping="Wrap" Text="Detalhes sobre o Peso" VerticalAlignment="Top" TextAlignment="Center" FontSize="22" FontFamily="MV Boli" Foreground="#FF574C4C"/>
             <TextBlock HorizontalAlignment="Left" Margin="10,40,0,0" TextWrapping="Wrap" Text="Data" VerticalAlignment="Top"/>
             <CalendarDatePicker Name="pkrData" HorizontalAlignment="Stretch" Margin="20,15,20,0" VerticalAlignment="Top" PlaceholderText="Escolha a data da pesagem"/>
             <TextBlock HorizontalAlignment="Left" Margin="10,30,0,0" TextWrapping="Wrap" Text="Peso" VerticalAlignment="Top"/>
