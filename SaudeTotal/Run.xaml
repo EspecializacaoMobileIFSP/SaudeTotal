@@ -8,6 +8,27 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+        <TextBlock Margin="10,50,10,0" TextWrapping="Wrap" Text="Corrida" VerticalAlignment="Top" TextAlignment="Center"/>
+        <ListBox x:Name="lbxDados" ItemsSource="{Binding}" Margin="0,75,0,58">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock x:Name="tbxItem"  Height="30" FontSize="18" Text="{Binding Name}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <CommandBar VerticalAlignment="Bottom" Height="48" Margin="0,0,0,10">
+            <CommandBar.Content>
+                <Grid/>
+            </CommandBar.Content>
+            <AppBarButton Name="abbBack" Icon="Back" Label="Voltar" Click="abbBack_Click"/>
+            <AppBarButton Name="abbDelete" Icon="Delete" Label="Deletar" Click="abbDelete_Click" IsEnabled="False"/>
+            <AppBarButton Name="abbAdd" Icon="Add" Label="Adicionar" Click="abbAdd_Click"/>
+            <CommandBar.SecondaryCommands>
+                <AppBarButton Name="abbUp" Icon="Upload" Label="Ascendente" Click="abbUp_Click"/>
+                <AppBarButton Name="abbDown" Icon="Download" Label="Descendente" Click="abbDown_Click"/>
+            </CommandBar.SecondaryCommands>
+        </CommandBar>
     </Grid>
 </Page>

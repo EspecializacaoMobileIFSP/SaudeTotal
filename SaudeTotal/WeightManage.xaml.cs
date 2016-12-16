@@ -20,36 +20,21 @@ namespace SaudeTotal
     /// <summary>
     /// Uma página vazia que pode ser usada isoladamente ou navegada dentro de um Quadro.
     /// </summary>
-    public sealed partial class Weight : Page
+    public sealed partial class WeightManage : Page
     {
-        public Weight()
+        public WeightManage()
         {
             this.InitializeComponent();
         }
 
-        private void abbBack_Click(object sender, RoutedEventArgs e)
+        private void btnCancelar_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(Chart));
+            Frame.Navigate(typeof(Weight));
         }
 
-        private void abbDelete_Click(object sender, RoutedEventArgs e)
+        private void btnCadastrar_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void abbAdd_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(WeightManage));
-        }
-
-        private void abbUp_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void abbDown_Click(object sender, RoutedEventArgs e)
-        {
-
+            Frame.Navigate(typeof(Weight));
         }
     }
 }

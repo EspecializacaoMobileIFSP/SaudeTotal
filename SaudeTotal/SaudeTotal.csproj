@@ -115,9 +115,15 @@
     <Compile Include="Run.xaml.cs">
       <DependentUpon>Run.xaml</DependentUpon>
     </Compile>
+    <Compile Include="RunManage.xaml.cs">
+      <DependentUpon>RunManage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Sessao.cs" />
     <Compile Include="Weight.xaml.cs">
       <DependentUpon>Weight.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WeightManage.xaml.cs">
+      <DependentUpon>WeightManage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -161,7 +167,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="RunManage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Weight.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WeightManage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

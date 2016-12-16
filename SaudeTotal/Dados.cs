@@ -78,11 +78,11 @@ namespace SaudeTotal
         /*
          * Corrida
          */
-        internal static List<Corrida> ListCorrida(Pessoa pessoa)
+        internal static List<Corrida> ListCorrida(Pessoa pessoa, String direction)
         {
             var retorno = new List<Corrida>();
             var result = conn.Query<Corrida>(
-                @"SELECT CorridaId, Data, Distancia, Tempo FROM Corrida WHERE Pessoa = ?", pessoa.PessoaId
+                @"SELECT CorridaId, Data, Distancia, Tempo FROM Corrida WHERE Pessoa = ? ORDER BY Data ?", pessoa.PessoaId, direction
             );
 
             foreach (var item in result)
@@ -95,11 +95,11 @@ namespace SaudeTotal
         /*
          * Peso
          */
-        internal static List<Peso> ListPeso(Pessoa pessoa)
+        internal static List<Peso> ListPeso(Pessoa pessoa, String direction)
         {
             var retorno = new List<Peso>();
             var result = conn.Query<Peso>(
-                @"SELECT PesoId, Data, Valor FROM Peso WHERE Pessoa = ?", pessoa.PessoaId
+                @"SELECT PesoId, Data, Valor FROM Peso WHERE Pessoa = ? ORDER BY Data ?", pessoa.PessoaId, direction
             );
 
             foreach (var item in result)

@@ -26,5 +26,30 @@ namespace SaudeTotal
         {
             this.InitializeComponent();
         }
+
+        private void abbBack_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Chart));
+        }
+
+        private void abbDelete_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void abbAdd_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(RunManage));
+        }
+
+        private void abbUp_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void abbDown_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
