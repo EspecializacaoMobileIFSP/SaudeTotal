@@ -36,9 +36,38 @@ namespace SaudeTotal
             sldAltura.Value = Sessao.pessoa.Altura;
         }
 
-        private void btnDeletar_Click(object sender, RoutedEventArgs e)
+        private async void btnDeletar_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(MainPage));
+            ContentDialog dlgMessage = new ContentDialog()
+            {
+                Title = "Perfil",
+                Content = "Deseja deletar seu perfil?",
+                PrimaryButtonText = "Deletar",
+                SecondaryButtonText = "Cancelar"
+            };
+            ContentDialogResult result = await dlgMessage.ShowAsync();
+            if (result == ContentDialogResult.Primary)
+            {
+                string message;
+                try
+                {
+                    Dados.Delete(Sessao.pessoa);
+                    message = "A operação foi realizada com sucesso.";
+                    Frame.Navigate(typeof(MainPage));
+                }
+                catch (Exception)
+                {
+                    message = "A operação falhou.";
+                }
+
+                dlgMessage = new ContentDialog()
+                {
+                    Title = "Perfil",
+                    Content = message,
+                    PrimaryButtonText = "Ok"
+                };
+                await dlgMessage.ShowAsync();
+            }
         }
 
         private void btnCancelar_Click(object sender, RoutedEventArgs e)
@@ -46,9 +75,36 @@ namespace SaudeTotal
             Frame.Navigate(typeof(Chart));
         }
 
-        private void btnAtualizar_Click(object sender, RoutedEventArgs e)
+        private async void btnAtualizar_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(Chart));
+            Pessoa pessoa = new Pessoa() {
+                PessoaId = Sessao.pessoa.PessoaId,
+                Nome = tbxNome.Text,
+                Acesso = Sessao.pessoa.Acesso,
+                Senha = tbxSenha.Password,
+                DataDeNascimento = Sessao.pessoa.DataDeNascimento,
+                Altura = sldAltura.Value,
+            };
+
+            string message;
+            try
+            {
+                Dados.Update(pessoa);
+                Sessao.pessoa = pessoa;
+                message = "A operação foi realizada com sucesso.";
+            }
+            catch (Exception)
+            {
+                message = "A operação falhou.";
+            }
+
+            ContentDialog dlgMessage = new ContentDialog()
+            {
+                Title = "Perfil",
+                Content = message,
+                PrimaryButtonText = "Ok"
+            };
+            await dlgMessage.ShowAsync();
         }
     }
 }

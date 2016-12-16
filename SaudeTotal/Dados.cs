@@ -31,6 +31,18 @@ namespace SaudeTotal
             }
         }
 
+        internal static void Update(object obj)
+        {
+            try
+            {
+                conn.Update(obj);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
         internal static void Delete(object obj)
         {
             try
