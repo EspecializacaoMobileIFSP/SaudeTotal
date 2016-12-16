@@ -7,13 +7,17 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBlock Margin="10,60,10,0" TextWrapping="Wrap" Text="Peso" VerticalAlignment="Top" TextAlignment="Center" FontWeight="Bold"/>
-        <TextBlock HorizontalAlignment="Left" Margin="10,105,0,0" TextWrapping="Wrap" Text="Data" VerticalAlignment="Top"/>
-        <CalendarDatePicker Name="pkrData" HorizontalAlignment="Stretch" Margin="10,130,10,0" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="10,167,0,0" TextWrapping="Wrap" Text="Peso" VerticalAlignment="Top"/>
-        <Slider Name="sldPeso" Margin="10,185,10,0" VerticalAlignment="Top" Maximum="300"/>
-        <Button Name="btnCancelar" Content="Cancelar" HorizontalAlignment="Center" Margin="10,234,225,0" VerticalAlignment="Top" Width="125" Click="btnCancelar_Click"/>
-        <Button Name="btnCadastrar" Content="Salvar" HorizontalAlignment="Center" Margin="225,234,10,0" VerticalAlignment="Top" Width="125" Click="btnCadastrar_Click"/>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="10,5,10,0">
+        <StackPanel HorizontalAlignment="Stretch" Margin="10,4,10,0" VerticalAlignment="Top">
+            <TextBlock Margin="10,60,10,0" TextWrapping="Wrap" Text="Detalhes sobre o seu Peso" VerticalAlignment="Top" TextAlignment="Center" FontSize="18"/>
+            <TextBlock HorizontalAlignment="Left" Margin="10,40,0,0" TextWrapping="Wrap" Text="Data" VerticalAlignment="Top"/>
+            <CalendarDatePicker Name="pkrData" HorizontalAlignment="Stretch" Margin="20,15,20,0" VerticalAlignment="Top" PlaceholderText="Escolha a data da pesagem"/>
+            <TextBlock HorizontalAlignment="Left" Margin="10,30,0,0" TextWrapping="Wrap" Text="Peso" VerticalAlignment="Top"/>
+            <Slider Name="sldPeso" Margin="20,15,20,0" VerticalAlignment="Top" Maximum="300"/>
+            <StackPanel HorizontalAlignment="Right" Margin="10,30,10,0" VerticalAlignment="Top" Orientation="Horizontal">
+                <Button Name="btnCancelar" Content="Cancelar" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Top" Width="125" Click="btnCancelar_Click" Background="#33FF0000" Foreground="#FF302B2B"/>
+                <Button Name="btnCadastrar" Content="Salvar" HorizontalAlignment="Right" Margin="10,0,0,0" VerticalAlignment="Top" Width="125" Click="btnCadastrar_Click" Foreground="#FF382E2E" Background="#3317FF00"/>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Page>
